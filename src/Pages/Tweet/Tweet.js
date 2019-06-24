@@ -80,18 +80,24 @@ class Tweet extends React.Component{
 
     handleUpdateClick =(index) => {
         //버튼 글씨 바뀌게하기.
-        if(!this.state.isUpdate){
-            this.setState({
-                isUpdate : true,
-               
-            })  
-        }else if(this.state.isUpdate){
-            this.setState({
-              isUpdate : false
-            })
-        }       
+        this.setState({
+            isUpdate : !this.state.isUpdate,
+            inputMessage : this.state.TweetList[index].inputMessage,
+            index : index
+        })        
     }
     
+    //반드시 분리해야함.
+    handleUpdateAfterClick = (e) => {
+        let tweets = [...this.state.TweetList]
+        tweets[this.state.index].inputMessage = this.state.inputMessage
+        this.setState({
+            isUpdate : false,
+            TweetList : tweets
+        })
+    }
+
+
     render(){
         return(
             <>            
@@ -101,8 +107,8 @@ class Tweet extends React.Component{
                 <TweetTable username={tweet_userName}/>
               </div>
               <div className="tweet-right-wrap-input-box">
-               <TweetRightBox onChange={!this.state.isUpdate ? this.handleChange : this.handleUpdateChange} 
-                              onClick={!this.state.isUpdate ? this.handleClick : this.handleUpdateClick} 
+               <TweetRightBox onChange={this.handleChange} 
+                              onClick={!this.state.isUpdate ? this.handleClick : this.handleUpdateAfterClick} 
                               value={this.state.inputMessage} 
                               innerValue={!this.state.isUpdate ? "Tweet" : "수정하기"}/>
                 <ul id="list-root">

@@ -3,11 +3,7 @@ import './AlertMessage.css';
 
 const AlertMessage = (props)=> {
     return (
-        <>
-          <div>
-            <p>{props.message}</p>  
-          </div>            
-        </>
+            <p>{props.message}</p>            
     );
 }
 export default AlertMessage;
