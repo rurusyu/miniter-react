@@ -4,6 +4,30 @@
   font-family: 'Nanum Brush Script', cursive;    
 }
 
+/* 로그인버튼 */
+.loginBtn, .signupBtn{
+    width : 571px;
+    height: 44px;
+    border-radius: 15px;
+    margin-bottom : 32px; 
+    background: #1DA1F2;
+    /*background: #1DA1F2;*/
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    border : none;
+}
+
+.loginBtn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.signupBtn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
 #login-root{
   position : relative;
   display: flex;
@@ -134,3 +158,4 @@ h1 {
 	}	
  
 }
+

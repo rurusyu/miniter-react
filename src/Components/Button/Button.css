@@ -1,4 +1,4 @@
-.signupBtn{
+button{
     width : 571px;
     height: 44px;
     border-radius: 15px;
@@ -11,7 +11,7 @@
     border : none;
 }
 
-.signupBtn:hover{
+button:hover{
     cursor: pointer;
     opacity: 0.5;
 }

@@ -23,18 +23,18 @@ class Login extends React.Component {
     })     
   }
   //handleChange값으로 로직을 넣으면 state관리를 해야하고, 한박자 느림.
-  changeBtnColor = () => {
-    if(this.state.inputID.length >= 6 && this.state.inputPW.length >=6){
-      return true;
-    }else{
-      return false;
-    }
-  }
+  // changeBtnColor = () => {
+  //   if(this.state.inputID.length >= 6 && this.state.inputPW.length >=6){
+  //     return true;
+  //   }else{
+  //     return false;
+  //   }
+  // }
   handleLogin = (e) => {
     console.log(this.changeBtnColor)
-   if(this.changeBtnColor() === true){
+   if(this.state.inputID.length >= 6 && this.state.inputPW.length >=6){
     this.props.history.push('/Tweet');
-   }else if(this.changeBtnColor() === false){
+   }else if(!(this.state.inputID.length >= 6 && this.state.inputPW.length >=6)){
      alert("아이디와 비번을 6자이상 입력해주세요")
    }
   }
@@ -49,10 +49,16 @@ class Login extends React.Component {
           </div>
         </Title>  
         <div className="login-wrap-input-btn">
-          <Input name="inputID" type="text" placeholder=" Enter ID" onChange={(e)=>this.handleChange(e)} />
-          <Input name="inputPW" type="password" placeholder=" Password" onChange={(e)=>this.handleChange(e)} />
-          <Button name="Login" onClick={this.handleLogin} style={this.changeBtnColor() ? {backgroundColor:"#1DA1F2"} : {backgroundColor:"gray"}}/>     
-          <Button name="Signup" onClick={this.handleSignup} style={{backgroundColor:"#1DA1F2"}} />
+          <Input name="inputID" type="text" placeholder=" Enter ID" onChange={this.handleChange} />
+          <Input name="inputPW" type="password" placeholder=" Password" onChange={this.handleChange} />
+          <Button className={this.state.inputID.length >= 6 && this.state.inputPW.length >=6 ? "loginBtn" : ""} 
+                  name="Login" 
+                  onClick={this.handleLogin} 
+                  />     
+          <Button className ="signupBtn"
+                  name="Signup" 
+                  onClick={this.handleSignup} 
+                  />
         </div>
         <div className="wrap-message">
           <AlertMessage/>
@@ -64,4 +70,5 @@ class Login extends React.Component {
 }
 
 export default withRouter(Login);
+
 

@@ -64,12 +64,30 @@ class Signup extends React.Component {
       <div id="signup-root">
        <Title title="Sign up to Miniter"></Title>
        <div className="signup-wrap-input-btn">
-         <Input name="inputID" type="text" placeholder="  Enter ID" onChange={(e)=> this.handleChange(e)}/>
-         <Input name="inputName" type="text" placeholder="  Enter Name" onChange={(e)=> this.handleChange(e)} />
-         <Input name="inputPW" type="password" placeholder="  Password" onChange={(e)=> this.handleChange(e)} />
-         <Input name="inputCkPW" type="password" placeholder="  Check Password" onChange={(e)=> this.handleChange(e)}/>
-         <Input name="inputProfile" type="text" placeholder="  Enter Profile" onChange={(e)=> this.handleChange(e)}/>
-         <Button name="Sign up" style={this.changeBtnColor() ? {backgroundColor:"#1DA1F2"} : {backgroundColor:"gray"}} onClick={this.handleClick}/>
+         <Input name="inputID" 
+                type="text" 
+                placeholder="  Enter ID" 
+                onChange={this.handleChange}/>
+         <Input name="inputName" 
+                type="text" 
+                placeholder="  Enter Name" 
+                onChange={this.handleChange} />
+         <Input name="inputPW" 
+                type="password" 
+                placeholder="  Password" 
+                onChange={this.handleChange} />
+         <Input name="inputCkPW" 
+                type="password" 
+                placeholder="  Check Password" 
+                onChange={this.handleChange}/>
+         <Input name="inputProfile" 
+                type="text" 
+                placeholder="  Enter Profile" 
+                onChange={this.handleChange}/>
+         <Button name="Sign up" 
+                 className ={(this.state.inputID.length >=6 && this.state.inputPW.length >=6 && this.state.inputCkPW.length >=6 
+                              && this.state.inputProfile && this.state.inputName) ? "signupBtn" : ""}
+                 onClick={this.handleClick}/>
        </div>
        <div  className="wrap-message one">
          <AlertMessage/>

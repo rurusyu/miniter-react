@@ -5,9 +5,29 @@
 @media(max-width:571px){
     #signup-root{
      width : 100%;
-  }
+    }
   }
   
+
+  .loginBtn, .signupBtn{
+    width : 571px;
+    height: 44px;
+    border-radius: 15px;
+    margin-bottom : 32px; 
+    background: #1DA1F2;
+    /*background: #1DA1F2;*/
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    border : none;
+}
+
+.loginBtn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
   #signup-root{
     display: flex;
     flex-direction: column;
