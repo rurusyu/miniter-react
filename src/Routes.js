@@ -5,9 +5,9 @@ import {
     Switch,
    } from 'react-router-dom';
 // import {index} from './index';
-import Login from './Pages/Login/Login';
-import Signup from './Pages/Signup/Signup';
-import Tweet from './Pages/Tweet/Tweet';
+import Login from './Pages/Login';
+import Signup from './Pages/Signup';
+import Tweet from './Pages/Tweet';
 import Index from './Pages/Index';
 
  class Routes extends React.Component {

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Signup.css';
-import Button from '../../Components/Button/Button';
-import Input from '../../Components/Input/Input';
-import Title from '../../Components/Title/Title';
-import AlertMessage from '../../Components/AlertMessage/AlertMessage';
+import Button from '../../Components/Button';
+import Input from '../../Components/Input';
+import Title from '../../Components/Title';
+import AlertMessage from '../../Components/AlertMessage';
 import {withRouter} from 'react-router-dom';
 
 class Signup extends React.Component {

@@ -1,10 +1,10 @@
 import React from 'react';
 import './Login.css';
 import { withRouter } from 'react-router-dom';
-import Button from '../../Components/Button/Button'
-import Input from '../../Components/Input/Input'
-import Title from '../../Components/Title/Title'
-import AlertMessage from '../../Components/AlertMessage/AlertMessage'
+import Button from '../../Components/Button';
+import Input from '../../Components/Input';
+import Title from '../../Components/Title';
+import AlertMessage from '../../Components/AlertMessage';
 
 class Login extends React.Component {
 

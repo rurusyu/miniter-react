@@ -1,8 +1,8 @@
 import React from 'react';
 import './Tweet.css';
-import TweetTable from '../../Components/TweetTable/TweetTable';
-import TweetLeftBox from '../../Components/TweetBox/TweetLeftBox';
-import TweetRightBox from '../../Components/TweetBox/TweetRightBox';
+import TweetTable from '../../Components/TweetTable';
+import {TweetLeftBox,TweetRightBox} from '../../Components/TweetBox';
+// import TweetRightBox from '../../Components/TweetBox';
 import tweet_userName from '../../config';
 
 
