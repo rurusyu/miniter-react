@@ -1,0 +1,230 @@
+
+
+/* 외부 폰트 먹이려고했는데... 단순 css에서는 안먹혀지는건가? src가 ttf로 되어야하는가? 리뷰후 지워야지..*/
+/* @font-face { 
+    font-family: "SoakUp"; 
+    src: url("font/soak_up_the_sun_script-webfont.woff");
+  } */
+  
+  @media(max-width :450px){
+    .tweet-wrap-box{
+      width: 100%;
+    }
+    #user-name{
+      width: 100%;
+      margin : 50%;
+      left : -75px;
+    }
+  }
+  
+  .tweets-page {
+    background: #E6ECF0;
+  
+  }
+  
+  .tweet-wrap-box{
+    padding : 20px;
+    display : flex;
+    justify-content: center;
+  }
+  
+  .tweet-left-box{
+    border : 1px solid white;
+    width : 450px;
+    height : 450px;
+    margin-right: 50px;
+  }
+  
+  .tweet-left-box-wrap-upper {
+    position : relative;
+    background: #1CA1F2;
+    width: 100%;
+    height : 50%;
+    padding : 10px;
+    padding-left: 15px;  
+  }
+  
+
+  
+  .tweet-upper-word{
+    position: absolute;
+    z-index: 1;
+    font-size : 32px;
+    left : 50px;
+    top : 40px;
+    /* font-style: "soak_up_the_sun_script-webfont"; 폰트가 안먹힘 */  
+    font-weight: bold;
+    color: white; 
+    margin : center;
+  }
+  
+  .tweet-right-wrap-input-box {
+    border : 2px solid white;
+    width : 1000px;
+    height : 1200px;
+  }
+  
+
+  
+  table{ 
+    position : relative;
+    margin-top :150px; 
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;  
+  }
+  
+  #user-name {
+    position : absolute;
+    top : 0;
+    margin-left: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  th{
+    color : #788794;
+    font-size : 24px;
+    width: 100px; 
+  }
+  
+  td {
+    color : #44B1F4;
+    font-size : 28px;
+    width: 100px; 
+  }
+  
+  .user-profile-wrap {
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    width : 150px;
+    height: 150px;
+    top : 67.5%;  
+    background: white;
+  }
+  
+  .user-profile {
+    border-radius: 50%;
+    position: absolute;
+    background: #1CA1F2;
+    width: 85%;
+    height: 85%;
+    top : 11.5px;
+    left : 11.5px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 2.5;
+  }
+  
+  /* 우측박스 */
+  .tweet-right-wrap-input-box{
+    padding : 5px;
+  }
+  
+  /* .tweet-wrap-input-img-btn {
+    width: 100%;
+    height: 250px;
+    background: #E8F5FD;
+    padding : 20px;
+    border-bottom: 2px solid #E7EDF1;
+  }
+  
+  #tweet-input{
+    width: 100%;
+    height: 60%;
+    resize: none;
+    border-radius: 15px;
+    border: 2px solid #A4D9F9;
+    font-size: 16px;
+  }
+  
+  .tweet-wrap-image-btn{
+    display: flex;
+    justify-content: flex-end;
+    background: #E8F5FD;
+    margin-top: 20px;  
+  }
+  
+  #tweet-submit{
+    font-size: 24px;
+    margin-left : 30px;
+    border: 1px solid gainsboro;
+    background: #4AB3F4;
+    border-radius: 15px;
+    width : 200px;
+    height: 50px;
+    color: white;
+  }
+  #tweet-submit:hover{
+    cursor: pointer;
+    background: #4AB3F4;
+    opacity: 0.5;
+  }
+  
+  .tweet-img{
+    font-size: 50px;
+    background: #E8F5FD;
+    line-height: 0.82;
+  }
+  
+  .tweet-img:hover{
+     transform:scale(1.1);
+  } */
+  
+  /*리스트부분*/
+  
+  .tweet-wrap-list{
+    background: white;
+    border-bottom: 2px solid #E7EDF1;
+    display: flex;
+    padding : 5px;
+  }
+  
+  .user-photo{
+    border-radius: 50%;
+    width : 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.5;
+    margin-right: 20px;
+  }
+  /* .user-name{
+    font-weight: bold;
+    font-size : 24px; 
+  } */
+  
+  .user-comment{
+    width: 100%;      
+    font-size: 24px;
+  }
+  
+  .user-name, .user-comment, #user-name, .tweet-submit, .tweet-upper-word,
+  table {
+   font-family: 'Nanum Brush Script', cursive;
+  }
+  
+  .user-photo:hover{
+    transform:scale(1.1); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
+  }
+  
+  #list-root{
+    list-style:  none;
+    padding-left: 0px; 
+  }
+  
+  .wrap-name-and-comment-and-times{
+    width : 100%;
+  }
+  
+  .wrap-name-and-times{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .written-times{
+    font-size : 16px;
+  }

@@ -1,0 +1,17 @@
+.signupBtn{
+    width : 571px;
+    height: 44px;
+    border-radius: 15px;
+    margin-bottom : 32px; 
+    background: gray;
+    /*background: #1DA1F2;*/
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    border : none;
+}
+
+.signupBtn:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}

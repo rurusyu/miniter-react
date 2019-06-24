@@ -1,0 +1,52 @@
+/* *{
+  font-family: 'Nanum Brush Script', cursive;
+} */
+
+@media(max-width:571px){
+    #signup-root{
+     width : 100%;
+  }
+  }
+  
+  #signup-root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  h1 {
+    text-align: center;
+    font-size: 54px;
+    font-weight: 400;
+  } 
+   
+  .signup-wrap-input-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  .one{
+    position :relative;
+    left : -190px;
+    bottom : 370px;
+  }
+  
+  .two{
+    position :relative;
+    bottom : 290px;
+    left : -219px;
+  }
+  /* #alert-password-check-message { 
+    position : relative;
+    z-index : 1;
+    left : 560px;
+    bottom : 300px;
+  }
+  
+  #alert-password-message{
+    position : relative;
+    z-index : 2;
+    left : 560px;
+    bottom : 380px;
+  } */
