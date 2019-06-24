@@ -51,7 +51,8 @@ class Signup extends React.Component {
   }
   
   handleClick =() =>{
-    if(this.changeBtnColor() && this.state.inputPW === this.state.inputCkPW){
+    if((this.state.inputID.length >=6 && this.state.inputPW.length >=6 && this.state.inputCkPW.length >=6 && this.state.inputProfile && this.state.inputName)
+     && this.state.inputPW === this.state.inputCkPW){
       this.props.history.push('/tweet')
     }else{
       alert("빈칸이 없어야 합니다.")
