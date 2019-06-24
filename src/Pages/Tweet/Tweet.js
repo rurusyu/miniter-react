@@ -109,12 +109,12 @@ class Tweet extends React.Component{
                   {
                      this.state.TweetList.map((tweet, index) => { //맵에 대한 키값 i
                          return(
-                            <div class="tweet-wrap-list">
-                            <div class="user-photo">{tweet.propfilePhoto}</div>
-                            <div class="wrap-name-and-comment-and-times">
-                              <div class="user-name">{tweet.username}</div>
-                              <div class="user-comment">{tweet.inputMessage}</div>
-                              <span class="written-times">{tweet.created_at}</span>
+                            <div className="tweet-wrap-list">
+                            <div className="user-photo">{tweet.propfilePhoto}</div>
+                            <div className="wrap-name-and-comment-and-times">
+                              <div className="user-name">{tweet.username}</div>
+                              <div className="user-comment">{tweet.inputMessage}</div>
+                              <span className="written-times">{tweet.created_at}</span>
                             </div>
                             <button onClick={(e) => this.handleUpdateClick(index)}>수정</button>          
                             <button onClick={(e) => this.handleDeleteClick(index)}>삭제</button>          
