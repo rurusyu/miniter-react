@@ -22,19 +22,13 @@ class Login extends React.Component {
      [e.target.name] : e.target.value,
     })     
   }
-  //handleChange값으로 로직을 넣으면 state관리를 해야하고, 한박자 느림.
-  // changeBtnColor = () => {
-  //   if(this.state.inputID.length >= 6 && this.state.inputPW.length >=6){
-  //     return true;
-  //   }else{
-  //     return false;
-  //   }
-  // }
+  
   handleLogin = (e) => {
-    console.log(this.changeBtnColor)
-   if(this.state.inputID.length >= 6 && this.state.inputPW.length >=6){
+   const check = this.state.inputID.length >= 6 && this.state.inputPW.length >=6;  
+   
+   if(check){
     this.props.history.push('/Tweet');
-   }else if(!(this.state.inputID.length >= 6 && this.state.inputPW.length >=6)){
+   }else if(!check){
      alert("아이디와 비번을 6자이상 입력해주세요")
    }
   }
@@ -49,9 +43,15 @@ class Login extends React.Component {
           </div>
         </Title>  
         <div className="login-wrap-input-btn">
-          <Input name="inputID" type="text" placeholder=" Enter ID" onChange={this.handleChange} />
-          <Input name="inputPW" type="password" placeholder=" Password" onChange={this.handleChange} />
-          <Button className={this.state.inputID.length >= 6 && this.state.inputPW.length >=6 ? "loginBtn" : ""} 
+          <Input name="inputID" 
+                 type="text" 
+                 placeholder=" Enter ID" 
+                 onChange={this.handleChange} />
+          <Input name="inputPW" 
+                 type="password" 
+                 placeholder=" Password" 
+                 onChange={this.handleChange} />
+          <Button className={this.state.inputID.length >= 6 && this.state.inputPW.length >=6 ? "loginBtn" : "loginBtnDefault"} 
                   name="Login" 
                   onClick={this.handleLogin} 
                   />     

@@ -29,7 +29,7 @@
 }
 
 
-button{
+.loginBtnDefault{
     width : 571px;
     height: 44px;
     border-radius: 15px;
@@ -41,12 +41,10 @@ button{
     border : none;
 }
 
-button:hover{
+.loginBtnDefault:hover{
     cursor: pointer;
     opacity: 0.5;
 }
-
-
 
 #login-root{
   position : relative;

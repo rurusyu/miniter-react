@@ -2,6 +2,8 @@ import React from 'react';
 import './Tweet.css';
 import TweetTable from '../../Components/TweetTable';
 import {TweetLeftBox,TweetRightBox} from '../../Components/TweetBox';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faPen } from '@fortawesome/free-solid-svg-icons';
 // import TweetRightBox from '../../Components/TweetBox';
 import tweet_userName from '../../config';
 
@@ -60,24 +62,6 @@ class Tweet extends React.Component{
         })
     }
 
-    // handleUpdateChange=(e)=> {
-    //     console.dir(e.target.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].childNodes[2].innerText, "안녕")
-    //     const listUl = e.target.parentNode.parentNode.childNodes[1];
-    //     const listUlLength = e.target.parentNode.parentNode.childNodes[1].childElementCount;
-    //     console.dir(e.target.parentNode.parentNode.childNodes[1])
-    //     const tweets = [...this.state.TweetList];    
-    //   //  console.log(typeof e.target.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].childNodes[2].innerText)
-    //     for(let i=0; i<listUlLength;i++){
-    //      for(let j=0; j<listUl.childNodes[i].childElementCount;i++){
-    //          if(listUl.childNodes[i].childNodes[j].childNodes[2].innerText === tweets[i].created_at){
-    //              console.log(i,j)
-    //              tweets[i].inputMessage = e.target.value;
-    //              return tweets[i].inputMessage;
-    //          }
-    //      }
-    //     }              
-    // }
-
     handleUpdateClick =(index) => {
         //버튼 글씨 바뀌게하기.
         this.setState({
@@ -93,7 +77,8 @@ class Tweet extends React.Component{
         tweets[this.state.index].inputMessage = this.state.inputMessage
         this.setState({
             isUpdate : false,
-            TweetList : tweets
+            TweetList : tweets,
+            inputMessage : ""
         })
     }
 
@@ -122,9 +107,9 @@ class Tweet extends React.Component{
                               <div className="user-comment">{tweet.inputMessage}</div>
                               <span className="written-times">{tweet.created_at}</span>
                             </div>
-                            <button onClick={(e) => this.handleUpdateClick(index)}>수정</button>          
-                            <button onClick={(e) => this.handleDeleteClick(index)}>삭제</button>          
-                          </div>  
+                            <button className="updateBtn" onClick={(e) => this.handleUpdateClick(index)}><FontAwesomeIcon icon={faPen}/></button>          
+                            <button className="deleteBtn" onClick={(e) => this.handleDeleteClick(index)}><FontAwesomeIcon icon={faTrashAlt}/></button>          
+                          </div> 
                          );
                      }) 
                   }

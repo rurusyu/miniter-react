@@ -16,8 +16,6 @@ class Signup extends React.Component {
     inputProfile :'',
   }
 
-
-
   //fetch 로 데이터 안넘어오면 network 탭 확인하고 질문할 것!!
   // fetch('http://10.58.4.65:8000/user/',{
   //   method:'post',
