@@ -81,7 +81,10 @@ class Tweet extends React.Component{
             inputMessage : ""
         })
     }
-
+    //로그아웃
+    handleUpdateClick=(e)=>{
+        console.log("클릭")
+    }
 
     render(){
         return(
@@ -90,6 +93,7 @@ class Tweet extends React.Component{
               <div className="tweet-left-box">
                <TweetLeftBox />
                 <TweetTable username={tweet_userName}/>
+                <button className="logoutBtn" onClick={this.handleUpdateClick}>로그아웃</button>
               </div>
               <div className="tweet-right-wrap-input-box">
                <TweetRightBox onChange={this.handleChange} 

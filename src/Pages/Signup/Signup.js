@@ -16,22 +16,6 @@ class Signup extends React.Component {
     inputProfile :'',
   }
 
-  //fetch 로 데이터 안넘어오면 network 탭 확인하고 질문할 것!!
-  // fetch('http://10.58.4.65:8000/user/',{
-  //   method:'post',
-  //   body:JSON.stringify({
-  //     "user_id" : "kkk",
-  //     "user_pw" : "112",
-  //     "email" : "htung",
-  //     "profile" : "111",
-  //   })
-  // })  //인자 2개인데 get이면 2번쨰 인자 안보내도됨. post일때는 보내줘야함. data도 보내줘야함.
-  // .then(res => res.json())  //바디에 데이터 들어옴. 바디만 리턴
-  // .then(data => { console.log(data)
-  //   // data.map(el => {
-  //   // //맵으로 뿌림.
-  //   // })
-  // })  //여기서는 완전 데이터만 받을 수 잇음.
 
   handleChange = (e) => {
     console.log(this.changeBtnColor())
@@ -51,7 +35,27 @@ class Signup extends React.Component {
   handleClick =() =>{
     if((this.state.inputID.length >=6 && this.state.inputPW.length >=6 && this.state.inputCkPW.length >=6 && this.state.inputProfile && this.state.inputName)
      && this.state.inputPW === this.state.inputCkPW){
-      this.props.history.push('/tweet')
+     
+    //fetch 로 데이터 안넘어오면 network 탭 확인하고 질문할 것!!
+    fetch('http://localhost:9000/signup/',{
+      method:'post',
+      body:JSON.stringify({
+        'user_id' : this.state.inputID,
+        'user_pw' : this.state.inputPW,
+        'user_name' : this.state.inputName,
+        'profile' :this.state.inputProfile,
+      }),
+      headers : {'Content-Type' : 'application/json' } //반드시 있어야함
+    })  //인자 2개인데 get이면 2번쨰 인자 안보내도됨. post일때는 보내줘야함. data도 보내줘야함.
+    .then(res => res.json())  //바디에 데이터 들어옴. 바디만 리턴
+    .then(data => { console.log(data);
+      if(data.message === "200 OK"){
+        alert("회원가입을 축하드립니다.");
+        this.props.history.push('/tweet')
+      }else if(data.message === "400 Bad Request"){
+        alert("아이디가 중복되었습니다.");
+      }
+    })  //여기서는 완전 데이터만 받을 수 잇음.
     }else{
       alert("빈칸이 없어야 합니다.")
     }
@@ -85,7 +89,7 @@ class Signup extends React.Component {
                 onChange={this.handleChange}/>
          <Button name="Sign up" 
                  className ={(this.state.inputID.length >=6 && this.state.inputPW.length >=6 && this.state.inputCkPW.length >=6 
-                              && this.state.inputProfile && this.state.inputName) ? "signupBtn" : ""}
+                              && this.state.inputProfile && this.state.inputName) ? "signupBtn" : "signupBtnDefault"}
                  onClick={this.handleClick}/>
        </div>
        <div  className="wrap-message one">
